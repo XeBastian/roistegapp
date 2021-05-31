@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Color white = Color(0xFFFFFFFF);
@@ -10,8 +11,9 @@ TextStyle defaultTextStyle = TextStyle(
   color: brown,
 );
 
-defaultAppBar({String title}) {
+defaultAppBar({String title, BuildContext context}) {
   return AppBar(
+    iconTheme: IconTheme.of(context).copyWith(color: brown),
     title: Text(
       title,
       style: defaultTextStyle,

@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
         flex: 16,
         child: Center(
           child: Text(
-            'No Image Selected, Click any Button Below to begin',
+            'First things first, Let\'s take an Image.\nPress any Button Below to begin',
             textAlign: TextAlign.center,
             style: defaultTextStyle,
           ),
@@ -168,7 +168,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: defaultAppBar(title: 'StegUI'),
+      appBar: defaultAppBar(title: 'Stegie', context: context),
       body: Column(
         children: [
           decideView(),

@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:roistegapp/constants/constants.dart';
+import 'package:roistegapp/screens/allImages.dart';
 import 'package:roistegapp/services/keyGen.dart';
 
 // ignore: must_be_immutable
@@ -43,7 +45,7 @@ class _ProcessImageState extends State<ProcessImage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: defaultAppBar(title: 'Add Message'),
+      appBar: defaultAppBar(title: 'Add Message', context: context),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 4.0, left: 8, right: 8.0),
@@ -125,18 +127,35 @@ class _ProcessImageState extends State<ProcessImage> {
                     height: 10,
                   ),
                   InkWell(
-                    // splashColor: Colors.lightBlueAccent,
                     borderRadius: BorderRadius.circular(10),
-                    onLongPress: () {
-                      setState(() {
-                        return Tooltip(
-                          message:
-                              'With Steganography, the message written is stored together with the key. To see the message, one needs to provide the key ',
-                        );
-                      });
-                    },
                     onTap: () {
                       HapticFeedback.heavyImpact();
+
+                      Get.bottomSheet(
+                        GestureDetector(
+                          onVerticalDragDown: (value) {
+                            if (true) {
+                              print('g');
+                            }
+                          },
+                          child: Container(
+                            height: Get.mediaQuery.size.height / 3.5,
+                            child: Center(
+                              child: Text(
+                                'Message Hidden Successfully.',
+                                style: TextStyle(
+                                  color: white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        enableDrag: true,
+                        backgroundColor: Colors.brown[500],
+                        isDismissible: true,
+                        elevation: 0.0,
+                      );
                     },
                     child: Container(
                       height: 50,

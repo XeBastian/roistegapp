@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:roistegapp/screens/introScreen.dart';
+import 'constants/constants.dart';
 import 'screens/homeScreen.dart';
 
 void main() {
@@ -23,11 +25,13 @@ class MyApp extends StatelessWidget {
     );
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'stegy',
+      title: 'Stegie',
       theme: ThemeData(
         fontFamily: 'ABeeZee',
+        primarySwatch: Colors.brown,
+        // primaryColor: Colors.white,
       ),
-      home: Home(),
+      home: OnBoardingPage(),
     );
   }
 }
