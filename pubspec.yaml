@@ -18,6 +18,8 @@ dependencies:
   image_cropper: ^1.4.0
   shared_preferences: ^2.0.6
   sqflite: ^2.0.0+3
+  font_awesome_flutter: ^9.0.0
+  introduction_screen: ^2.1.0
   encrypt: ^4.0.0
 
 dev_dependencies:

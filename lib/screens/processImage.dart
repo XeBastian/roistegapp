@@ -125,15 +125,12 @@ class _ProcessImageState extends State<ProcessImage> {
                     height: 10,
                   ),
                   InkWell(
-                    // splashColor: Colors.lightBlueAccent,
                     borderRadius: BorderRadius.circular(10),
                     onLongPress: () {
-                      setState(() {
-                        return Tooltip(
-                          message:
-                              'With Steganography, the message written is stored together with the key. To see the message, one needs to provide the key ',
-                        );
-                      });
+                      return Tooltip(
+                        message:
+                            'With Steganography, the message written is stored together with the key. To see the message, one needs to provide the key ',
+                      );
                     },
                     onTap: () {
                       HapticFeedback.heavyImpact();

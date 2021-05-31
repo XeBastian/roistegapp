@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  dots_indicator:
+    dependency: transitive
+    description:
+      name: dots_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   encrypt:
     dependency: "direct main"
     description:
@@ -142,6 +149,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.0.0"
   get:
     dependency: "direct main"
     description:
@@ -195,6 +209,13 @@ packages:
     dependency: transitive
     description:
       name: image_picker_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+  introduction_screen:
+    dependency: "direct main"
+    description:
+      name: introduction_screen
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
