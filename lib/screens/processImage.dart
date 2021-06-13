@@ -5,12 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:roistegapp/constants/constants.dart';
 import 'package:roistegapp/screens/allImages.dart';
+import 'package:roistegapp/screens/stegieChoice.dart';
 import 'package:roistegapp/services/keyGen.dart';
 
 // ignore: must_be_immutable
 class ProcessImage extends StatefulWidget {
   File image;
-
+  List<Image> processedImages = [];
   ProcessImage({Key key, this.image});
 
   @override
@@ -42,6 +43,11 @@ class _ProcessImageState extends State<ProcessImage> {
     //
   }
 
+  addImage() {
+    ProcessImage().processedImages.add(Image.file(widget.image));
+    Get.to(Choice());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,8 +71,9 @@ class _ProcessImageState extends State<ProcessImage> {
                         padding: EdgeInsets.only(top: 4, left: 2, right: 2),
                         width: MediaQuery.of(context).size.width / 1,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: brown)),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: brown),
+                        ),
                         child: TextFormField(
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
@@ -130,32 +137,32 @@ class _ProcessImageState extends State<ProcessImage> {
                     borderRadius: BorderRadius.circular(10),
                     onTap: () {
                       HapticFeedback.heavyImpact();
-
-                      Get.bottomSheet(
-                        GestureDetector(
-                          onVerticalDragDown: (value) {
-                            if (true) {
-                              print('g');
-                            }
-                          },
-                          child: Container(
-                            height: Get.mediaQuery.size.height / 3.5,
-                            child: Center(
-                              child: Text(
-                                'Message Hidden Successfully.',
-                                style: TextStyle(
-                                  color: white,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        enableDrag: true,
-                        backgroundColor: Colors.brown[500],
-                        isDismissible: true,
-                        elevation: 0.0,
-                      );
+                      addImage();
+                      // Get.bottomSheet(
+                      //   GestureDetector(
+                      //     onVerticalDragDown: (value) {
+                      //       if (true) {
+                      //         print('g');
+                      //       }
+                      //     },
+                      //     child: Container(
+                      //       height: Get.mediaQuery.size.height / 3.5,
+                      //       child: Center(
+                      //         child: Text(
+                      //           'Message Hidden Successfully.',
+                      //           style: TextStyle(
+                      //             color: white,
+                      //             fontSize: 18,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      //   enableDrag: true,
+                      //   backgroundColor: Colors.brown[500],
+                      //   isDismissible: true,
+                      //   elevation: 0.0,
+                      // );
                     },
                     child: Container(
                       height: 50,

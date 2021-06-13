@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:roistegapp/constants/constants.dart';
-import 'package:roistegapp/screens/homeScreen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   @override
@@ -11,17 +10,13 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
-
+  RouteSettings route = RouteSettings();
   void _onIntroEnd(context) {
-    Get.to(Home());
+    Get.off(route);
   }
 
   Widget _buildImage(String assetName, [double width = 350]) {
-<<<<<<< HEAD
     return Image.asset('assets/images/mimi$assetName.gif', width: width);
-=======
-    return Image.asset('assets/images/$assetName', width: width);
->>>>>>> origin/master
   }
 
   @override
@@ -44,7 +39,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         alignment: Alignment.topRight,
         child: SafeArea(
           child: Padding(
-<<<<<<< HEAD
             padding: const EdgeInsets.only(top: 8, right: 16),
             child: Text(
               'Stegie',
@@ -55,10 +49,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
             // _buildImage('9', 100),
-=======
-            padding: const EdgeInsets.only(top: 16, right: 16),
-            child: _buildImage('flutter.png', 100),
->>>>>>> origin/master
           ),
         ),
       ),
@@ -71,7 +61,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             color: Colors.brown,
             child: Center(
               child: Text(
-                'Aaarhh Let\s just dive right in Stegie!',
+                'Aaarhh Let\s dive right in Stegie!',
                 style: TextStyle(
                     color: white, fontSize: 16.0, fontWeight: FontWeight.bold),
               ),
@@ -81,7 +71,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-<<<<<<< HEAD
           title: "Welcome to Stegie!\n Yes, You've Made it.",
           body:
               "This is a Region Of Interest Based Reversible Data Hiding Scheme in Encrypted Images.\n\n Take a very short tour to get familiar with your space.",
@@ -92,19 +81,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Send And Receive Hidden Messages",
           body: "Made just for that. with a Real Time Advanced Chat System",
           image: _buildImage('3'),
-=======
-          title: "Welcome to Stegie!\n Yes You've Made it.",
-          body:
-              "We are Happy to have you on Board. Take a very short tour to get familiar with your space.",
-          image: _buildImage('img1.jpg'),
->>>>>>> origin/master
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Hide Sensitive Data",
           body:
               "Hide Your Important Data in the Image without any worry and send it easily",
-<<<<<<< HEAD
           image: _buildImage('3'),
           decoration: pageDecoration,
         ),
@@ -112,22 +94,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Trick the Trickster",
           body: "Keep Your Data Hidden on a Particular region within the Image",
           image: _buildImage('4'),
-=======
-          image: _buildImage('img1.jpg'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Select A Region of Interest",
-          body: "Keep Your Data Hidden on a Particular region within the Image",
-          image: _buildImage('img2.jpg'),
->>>>>>> origin/master
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Secure Your Data",
           body:
               "With SHA-512 Image Encryption Algorithm, your Data is fully Secured ",
-<<<<<<< HEAD
           image: _buildImage('5'),
           decoration: pageDecoration,
         ),
@@ -150,30 +122,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           body:
               "You have Finished the Simple Stegie tour. We can't wait to have you around.\nLets Roll",
           image: _buildImage('2'),
-=======
-          image: _buildImage('img3.jpg'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "View All Your Images",
-          body:
-              "Easily view all images you have sent and received in one Catalogue",
-          image: _buildImage('img2.jpg'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Fast Image Decoding",
-          body:
-              "Reveal or Decode the Message in the Image in Real time and very Fast.",
-          image: _buildImage('img2.jpg'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Lossless Compression",
-          body:
-              "With 99% Effective Rate, None of your Pixels are lost during the Image Processing.",
-          image: _buildImage('img2.jpg'),
->>>>>>> origin/master
           decoration: pageDecoration,
         ),
       ],
@@ -192,11 +140,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       dotsDecorator: const DotsDecorator(
-<<<<<<< HEAD
         size: Size(7.0, 7.0),
-=======
-        size: Size(10.0, 10.0),
->>>>>>> origin/master
         color: Color(0xFFBDBDBD),
         activeSize: Size(22.0, 10.0),
         activeColor: Colors.brown,
@@ -204,10 +148,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           borderRadius: BorderRadius.all(Radius.circular(12.0)),
         ),
       ),
-<<<<<<< HEAD
       dotsFlex: 1,
-=======
->>>>>>> origin/master
       dotsContainerDecorator: const ShapeDecoration(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(

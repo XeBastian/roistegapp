@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  File _imageFile;
+  File imageFile;
   final picker = ImagePicker();
 
   Future pickImageFromGallery() async {
@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
     final picture = await picker.getImage(source: ImageSource.gallery);
 
     this.setState(() {
-      _imageFile = File(picture.path);
+      imageFile = File(picture.path);
     });
   }
 
@@ -32,12 +32,12 @@ class _HomeState extends State<Home> {
     final picture = await picker.getImage(source: ImageSource.camera);
 
     this.setState(() {
-      _imageFile = File(picture.path);
+      imageFile = File(picture.path);
     });
   }
 
   Widget decideView() {
-    if (_imageFile != null)
+    if (imageFile != null)
       return Expanded(
         flex: 16,
         child: Column(
@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
             Expanded(
               flex: 16,
               child: Image.file(
-                _imageFile,
+                imageFile,
               ),
             ),
             Expanded(
@@ -86,7 +86,7 @@ class _HomeState extends State<Home> {
                       onTap: () {
                         HapticFeedback.heavyImpact();
                         setState(() {
-                          _imageFile = null;
+                          imageFile = null;
                         });
                       },
                       child: Container(
@@ -123,7 +123,7 @@ class _HomeState extends State<Home> {
 
   Future<Null> _cropImage() async {
     File croppedFile = await ImageCropper.cropImage(
-      sourcePath: _imageFile.path,
+      sourcePath: imageFile.path,
       aspectRatioPresets: Platform.isAndroid
           ? [
               CropAspectRatioPreset.square,
@@ -157,10 +157,10 @@ class _HomeState extends State<Home> {
     );
 
     if (croppedFile != null) {
-      _imageFile = croppedFile;
+      imageFile = croppedFile;
       print('achiswa');
       Get.to(ProcessImage(
-        image: _imageFile,
+        image: imageFile,
       ));
     }
   }
@@ -195,13 +195,6 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: CustomButton(
-              destination: AllImages(),
-              displayText: 'Show All Images',
             ),
           ),
         ],
