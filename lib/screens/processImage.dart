@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:roistegapp/constants/constants.dart';
-import 'package:roistegapp/screens/allImages.dart';
 import 'package:roistegapp/screens/stegieChoice.dart';
 import 'package:roistegapp/services/keyGen.dart';
 
@@ -137,32 +136,32 @@ class _ProcessImageState extends State<ProcessImage> {
                     borderRadius: BorderRadius.circular(10),
                     onTap: () {
                       HapticFeedback.heavyImpact();
-                      addImage();
-                      // Get.bottomSheet(
-                      //   GestureDetector(
-                      //     onVerticalDragDown: (value) {
-                      //       if (true) {
-                      //         print('g');
-                      //       }
-                      //     },
-                      //     child: Container(
-                      //       height: Get.mediaQuery.size.height / 3.5,
-                      //       child: Center(
-                      //         child: Text(
-                      //           'Message Hidden Successfully.',
-                      //           style: TextStyle(
-                      //             color: white,
-                      //             fontSize: 18,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      //   enableDrag: true,
-                      //   backgroundColor: Colors.brown[500],
-                      //   isDismissible: true,
-                      //   elevation: 0.0,
-                      // );
+
+                      Get.bottomSheet(
+                        GestureDetector(
+                          onVerticalDragDown: (value) {
+                            if (true) {
+                              print('g');
+                            }
+                          },
+                          child: Container(
+                            height: Get.mediaQuery.size.height / 3.5,
+                            child: Center(
+                              child: Text(
+                                'Message Hidden Successfully.',
+                                style: TextStyle(
+                                  color: white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        enableDrag: true,
+                        backgroundColor: Colors.brown[500],
+                        isDismissible: true,
+                        elevation: 0.0,
+                      );
                     },
                     child: Container(
                       height: 50,
