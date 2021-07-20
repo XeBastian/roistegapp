@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:roistegapp/constants/constants.dart';
-import 'package:roistegapp/screens/allImages.dart';
 import 'package:roistegapp/screens/processImage.dart';
 
 class Home extends StatefulWidget {

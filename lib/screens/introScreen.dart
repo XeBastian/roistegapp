@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:roistegapp/constants/constants.dart';
+import 'package:roistegapp/screens/stegieChoice.dart';
 
 class OnBoardingPage extends StatefulWidget {
   @override
@@ -12,11 +13,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
   RouteSettings route = RouteSettings();
   void _onIntroEnd(context) {
-    Get.off(route);
+    Get.off(Choice());
   }
 
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/images/mimi$assetName.gif', width: width);
+  Widget _buildImage(String assetName, [double width = 150]) {
+    return Image.asset('assets/images/mimi$assetName.png', width: width);
   }
 
   @override
@@ -74,13 +75,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Welcome to Stegie!\n Yes, You've Made it.",
           body:
               "This is a Region Of Interest Based Reversible Data Hiding Scheme in Encrypted Images.\n\n Take a very short tour to get familiar with your space.",
-          image: _buildImage('2'),
+          image: _buildImage('1'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Send And Receive Hidden Messages",
+          title: "Send And Receive Messages",
           body: "Made just for that. with a Real Time Advanced Chat System",
-          image: _buildImage('3'),
+          image: _buildImage('2'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -88,12 +89,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           body:
               "Hide Your Important Data in the Image without any worry and send it easily",
           image: _buildImage('3'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Trick the Trickster",
-          body: "Keep Your Data Hidden on a Particular region within the Image",
-          image: _buildImage('4'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -121,7 +116,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Congratulations!!",
           body:
               "You have Finished the Simple Stegie tour. We can't wait to have you around.\nLets Roll",
-          image: _buildImage('2'),
+          image: _buildImage('1'),
           decoration: pageDecoration,
         ),
       ],
@@ -130,7 +125,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      //rtl: true, // Display as right-to-left
+
       skip: const Text(
         'Skip',
         style: TextStyle(fontWeight: FontWeight.w500),
